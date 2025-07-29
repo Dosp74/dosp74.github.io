@@ -218,6 +218,17 @@ int main() {
 }
 ```
 
+🔽 출력 :
+
+```plaintext
+선택된 간선들(u - v : weight):
+V1 - V2 : 1
+V1 - V3 : 3
+V3 - V5 : 2
+V3 - V4 : 4
+총 가중치 : 10
+```
+
 Y(vertex subset)와 가장 가까운 vertex 찾기를 반복한다.<br><br>
 입력으로<br>
 W[i][j] (가중치 테이블 - symmetric, W[j][i]와 같다)<br>
@@ -393,6 +404,17 @@ int main() {
 
     return 0;
 }
+```
+
+🔽 출력 :
+
+```plaintext
+선택된 간선들(u - v : weight):
+V1 - V2 : 1
+V3 - V5 : 2
+V1 - V3 : 3
+V3 - V4 : 4
+총 가중치 : 10
 ```
 
 참고로 크루스칼 알고리즘의 시간 복잡도는 edge의 개수에 따라 크게 달라지는데, 그 이유는 edge를 가중치 기준으로 정렬하는 데 걸리는 시간에 있다.<br>
