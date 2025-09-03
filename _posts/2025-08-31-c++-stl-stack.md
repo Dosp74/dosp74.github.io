@@ -1,6 +1,6 @@
 ---
 title: "[C++] STL stack"
-date: 2025-08-31 01:30:00 +0900
+date: 2025-08-31 00:30:00 +0900
 last_mod: 2025-08-31
 categories: [C++]
 tags: [C++, STL, stack, 백준, 10799번]
