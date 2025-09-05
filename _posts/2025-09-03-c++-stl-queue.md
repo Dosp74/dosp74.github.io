@@ -1,9 +1,9 @@
 ---
 title: "[C++] STL queue"
 date: 2025-09-03 19:10:00 +0900
-last_mod: 2025-09-03
+last_mod: 2025-09-05
 categories: [C++]
-tags: [C++, STL, queue, 백준, 1158번]
+tags: [C++, STL, queue, priority_queue, 백준, 1158번, 2075번]
 ---
 
 C++ STL의 queue는 **먼저 들어온 원소가 가장 먼저 나가는 FIFO(First In, First Out) 구조를 구현한 컨테이너 어댑터(container adapter)** 이다.<br>
@@ -101,6 +101,84 @@ int main() {
     }
 
     cout << josephus.front() << ">";
+
+    return 0;
+}
+```
+
+<br>
+
+# priority_queue
+
+한편, `<queue>` 헤더 파일에는 queue 이외에 `priority_queue`도 포함되어 있다. C++ STL의 `priority_queue`는 우선순위 큐를 구현한 컨테이너 어댑터로, 내부적으로 힙(heap) 자료구조를 사용하여 원소들을 정렬한다.
+
+기본적으로는 최대 힙(max-heap) 구조이며, 가장 큰 값이 top에 위치한다.
+
+## 주요 멤버 함수
+
+| 함수명    | 설명                                       |
+| --------- | ------------------------------------------ |
+| push(val) | 원소 삽입                                  |
+| pop()     | top() 원소 제거                            |
+| top()     | 현재 큐에서 가장 우선순위가 높은 원소 반환 |
+| empty()   | 큐가 비어있는지 확인                       |
+| size()    | 원소 개수 반환                             |
+
+## 최소 힙(min-heap)으로 만들기
+
+```cpp
+#include <queue>
+
+priority_queue<int, vector<int>, greater<int>> min_heap;
+```
+
+### 주의
+
+`sort`에서는 greater를 인자로 전달하면 내림차순 정렬이 됐었는데, `priority_queue`에서는 **비교 연산자가 true일 때 우선순위가 낮다** 는 의미이기 때문에 greater를 쓰면 작은 값이 먼저 나오는 최소 힙이 된다.
+
+## 실전
+
+![Image](/assets/images/2025-09-05/2025-09-05-baekjoon-2075.png)
+
+[https://www.acmicpc.net/problem/2075](https://www.acmicpc.net/problem/2075)
+
+- N개의 최댓값만 유지하는 최소 힙(min-heap)을 사용한다.
+
+- N개 이하일 때는 그냥 삽입, 이후에는 현재 숫자가 heap의 top(N개 중 가장 작은 값)보다 크면 top을 제거하고 새 값을 삽입한다.
+
+- 그 결과 가장 큰 수들 중 상위 N개만 남게 되고, 이중 가장 작은 값이 N번째 큰 수이다.
+
+```cpp
+#include <iostream>
+#include <vector>
+#include <queue>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int N;
+    cin >> N;
+
+    priority_queue<int, vector<int>, greater<int>> min_heap;
+
+    for (int i = 0; i < N * N; i++) {
+        int number;
+        cin >> number;
+
+        if (min_heap.size() < N) {
+            min_heap.push(number);
+        }
+        else {
+            if (number > min_heap.top()) {
+                min_heap.pop();
+                min_heap.push(number);
+            }
+        }
+    }
+
+    cout << min_heap.top();
 
     return 0;
 }
