@@ -20,11 +20,11 @@ rtl: # true, false (default) # turns direction of the page into right to left fo
 title: "개발 공부 기록"
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
-name: "Dosp74"
+name: "dosp74"
 description: "개발과 성장을 기록하는 공간"
-url: "https://Dosp74.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url: "https://dosp74.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl: "" # the subpath of your site, e.g. "/blog"
-repository: "Dosp74/Dosp74.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository: "dosp74/dosp74.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo: # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title: # overrides the website title displayed in the masthead, use " " for no title
@@ -110,7 +110,7 @@ analytics:
     tracking_id:
     anonymize_ip: # true, false (default)
   goatcounter:
-    id: Dosp74
+    id: dosp74
 
 # Page Views Settings
 pageviews:
@@ -118,7 +118,7 @@ pageviews:
 
 # Site Author
 author:
-  name: "Dosp74"
+  name: "dosp74"
   avatar: "/assets/images/profile.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio: "개발과 성장을 기록하는 공간"
   location: "Seoul, South Korea"
@@ -138,7 +138,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/Dosp74"
+      url: "https://github.com/dosp74"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
